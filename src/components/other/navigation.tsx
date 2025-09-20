@@ -51,7 +51,9 @@ export const Navigation = () => {
         ))}
       </div>
       <div className="flex-1 flex justify-end gap-2">
-        <Button>Daftar Sekarang</Button>
+        <Button onClick={() => scrollToSection("registration")}>
+          Daftar Sekarang
+        </Button>
         <ModeToggle />
       </div>
     </nav>
