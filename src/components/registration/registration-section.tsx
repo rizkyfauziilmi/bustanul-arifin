@@ -117,6 +117,8 @@ const registrationMethods: RegistrationMethod[] = [
 ];
 
 export default function RegistrationSection() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <section id="registration">
       {/* Header */}
@@ -132,7 +134,7 @@ export default function RegistrationSection() {
         <div className="mt-6">
           <Badge variant="secondary" className="text-lg px-4 py-2">
             <Clock className="w-4 h-4 mr-2" />
-            Pendaftaran PPDB 2025/2026 Dibuka
+            Pendaftaran PPDB {currentYear}/{currentYear + 1} Dibuka
           </Badge>
         </div>
       </div>

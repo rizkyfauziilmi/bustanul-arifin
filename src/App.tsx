@@ -8,6 +8,7 @@ import { ThemeProvider } from "./components/theme-provider";
 import FacilitiesSection from "./components/facilities/facilities-section";
 import ProgramsSection from "./components/programs/programs-section";
 import RegistrationSection from "./components/registration/registration-section";
+import Footer from "./components/other/footer";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <RegistrationSection />
           </ContentLayout>
         </MainLayout>
+        <Footer />
       </main>
     </ThemeProvider>
   );

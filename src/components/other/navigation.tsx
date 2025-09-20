@@ -1,3 +1,4 @@
+import { scrollToSection } from "@/lib/dom";
 import { ModeToggle } from "../mode-toggle";
 import { Button } from "../ui/button";
 
@@ -29,22 +30,6 @@ const links = [
 ];
 
 export const Navigation = () => {
-  const scrollToSection = (id: string) => {
-    if (id === "home") {
-      // scroll to top
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    const element = document.getElementById(id);
-    if (element) {
-      const yOffset = -80; // 80px offset for navbar
-      const y =
-        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
-
   return (
     <nav className="flex items-center justify-between sticky top-0 z-50 backdrop-blur-md border-b px-18 h-16">
       <div className="flex items-center gap-2 flex-1">
