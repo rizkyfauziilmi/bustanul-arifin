@@ -8,6 +8,7 @@ import Instagram from "../svgs/instagram";
 import YouTube from "../svgs/youtube";
 import WhatsApp from "../svgs/whatsapp";
 import { EmailTemplateDialog } from "../dialogs/email-template-dialog";
+import { cn } from "@/lib/utils";
 
 type VisitContent = {
   address: string;
@@ -63,6 +64,14 @@ const registrationMethods: RegistrationMethod[] = [
     },
   },
   {
+    id: "email",
+    title: "Form Pendaftaran via Email",
+    description:
+      "Kirim form pendaftaran melalui email dengan format yang telah ditentukan",
+    icon: <Mail className="w-6 h-6" />,
+    color: "bg-purple-500",
+  },
+  {
     id: "social",
     title: "Melalui Media Sosial",
     description:
@@ -98,14 +107,6 @@ const registrationMethods: RegistrationMethod[] = [
       ],
     },
   },
-  {
-    id: "email",
-    title: "Form Pendaftaran via Email",
-    description:
-      "Kirim form pendaftaran melalui email dengan format yang telah ditentukan",
-    icon: <Mail className="w-6 h-6" />,
-    color: "bg-purple-500",
-  },
 ];
 
 export default function RegistrationSection() {
@@ -136,11 +137,22 @@ export default function RegistrationSection() {
         {registrationMethods.map((method, index) => (
           <Card
             key={method.id}
-            className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border"
+            className={cn(
+              "group hover:shadow-xl transition-all relative duration-300 hover:-translate-y-2 border-border",
+              method.id === "email" && "border border-primary",
+            )}
           >
+            {method.id === "email" && (
+              <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
+                Direkomendasikan
+              </Badge>
+            )}
             <CardHeader className="flex items-center gap-4">
               <div
-                className={`w-12 h-12 ${method.color} rounded-lg flex items-center justify-center text-white`}
+                className={cn(
+                  "w-12 h-12 rounded-lg flex items-center justify-center text-white",
+                  method.color,
+                )}
               >
                 {method.icon}
               </div>
@@ -149,15 +161,32 @@ export default function RegistrationSection() {
                   <h3 className="text-xl font-semibold text-card-foreground">
                     {method.title}
                   </h3>
-                  <Badge variant="outline" className="mt-1">
+                  <Badge
+                    variant={method.id === "email" ? "default" : "outline"}
+                    className={cn(
+                      "mt-1",
+                      method.id === "email" && "bg-primary text-white",
+                    )}
+                  >
                     Metode {index + 1}
                   </Badge>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p
+                className={cn(
+                  "text-muted-foreground mb-6 leading-relaxed",
+                  method.id === "email" && "font-semibold text-foreground",
+                )}
+              >
                 {method.description}
+                {method.id === "email" && (
+                  <span className="block mt-2 text-primary font-medium">
+                    Kami merekomendasikan pendaftaran melalui email untuk proses
+                    yang lebih cepat dan terstruktur.
+                  </span>
+                )}
               </p>
 
               {/* Content based on method type */}
