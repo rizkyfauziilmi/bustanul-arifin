@@ -1,15 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  MapPin,
-  MessageCircle,
-  Mail,
-  ExternalLink,
-  Phone,
-  Clock,
-  Users,
-} from "lucide-react";
+import { MapPin, Mail, ExternalLink, Clock, Users } from "lucide-react";
 import type { ReactNode } from "react";
 import Facebook from "../svgs/facebook";
 import Instagram from "../svgs/instagram";
@@ -232,28 +224,6 @@ export default function RegistrationSection() {
             </CardContent>
           </Card>
         ))}
-      </div>
-
-      {/* Additional Info */}
-      <div className="bg-muted/50 rounded-2xl p-8 text-center">
-        <h3 className="text-2xl font-semibold text-foreground mb-4">
-          Butuh Bantuan Lebih Lanjut?
-        </h3>
-        <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-pretty">
-          Tim kami siap membantu Anda dalam proses pendaftaran. Jangan ragu
-          untuk menghubungi kami melalui salah satu cara di atas atau datang
-          langsung ke sekolah.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            <Phone className="w-4 h-4 mr-2" />
-            Hubungi Sekarang
-          </Button>
-          <Button size="lg" variant="outline">
-            <MessageCircle className="w-4 h-4 mr-2" />
-            Chat WhatsApp
-          </Button>
-        </div>
       </div>
     </section>
   );

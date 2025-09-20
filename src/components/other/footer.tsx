@@ -4,7 +4,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  MessageCircle,
   ExternalLink,
   Clock,
   BookOpen,
@@ -152,7 +151,7 @@ export default function Footer() {
                 <a
                   href="https://wa.me/6285777198308"
                   target="_blank"
-                  className="cursor-pointer group flex items-start gap-3 text-sm"
+                  className="cursor-pointer group flex items-center gap-3 text-sm"
                 >
                   <Phone className="w-4 h-4 text-primary" />
                   <span className="text-muted-foreground transition-colors duration-300 group-hover:text-primary leading-relaxed">
@@ -164,7 +163,7 @@ export default function Footer() {
                 <a
                   href="mailto:rizkyfauziilmi@gmail.com"
                   target="_blank"
-                  className="cursor-pointer group flex items-start gap-3 text-sm"
+                  className="cursor-pointer group flex items-center gap-3 text-sm"
                 >
                   <Mail className="w-4 h-4 text-primary" />
                   <span className="text-muted-foreground transition-colors duration-300 group-hover:text-primary leading-relaxed">
