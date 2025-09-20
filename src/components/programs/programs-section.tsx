@@ -85,7 +85,7 @@ const programData = {
 
 export default function ProgramsSection() {
   return (
-    <section>
+    <section id="programs">
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">

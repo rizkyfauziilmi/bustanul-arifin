@@ -7,6 +7,7 @@ import { TuitionSection } from "./components/tuition/tuition-section";
 import { ThemeProvider } from "./components/theme-provider";
 import FacilitiesSection from "./components/facilities/facilities-section";
 import ProgramsSection from "./components/programs/programs-section";
+import RegistrationSection from "./components/registration/registration-section";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </ContentLayout>
           <ContentLayout>
             <ProgramsSection />
+          </ContentLayout>
+          <ContentLayout>
+            <RegistrationSection />
           </ContentLayout>
         </MainLayout>
       </main>

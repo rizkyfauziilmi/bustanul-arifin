@@ -25,7 +25,7 @@ const quickInfo = [
 export const AboutSection = () => {
   return (
     <section id="about">
-      <div className="space-y-8">
+      <div className="space-y-12">
         <div className="flex items-center gap-8">
           <img
             src="/hero-image.jpg"
@@ -40,7 +40,7 @@ export const AboutSection = () => {
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
               Tentang Kami
             </h1>
-            <p className="leading-7">
+            <p className="leading-7 max-w-2xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
               adipisicing elit. Consectetur iure quis minima! Quasi officia
               fugit, libero eius corrupti nihil facilis dolores nobis expedita
