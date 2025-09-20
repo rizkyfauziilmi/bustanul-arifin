@@ -6,6 +6,7 @@ import { Navigation } from "./components/other/navigation";
 import { TuitionSection } from "./components/tuition/tuition-section";
 import { ThemeProvider } from "./components/theme-provider";
 import FacilitiesSection from "./components/facilities/facilities-section";
+import ProgramsSection from "./components/programs/programs-section";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </ContentLayout>
           <ContentLayout>
             <FacilitiesSection />
+          </ContentLayout>
+          <ContentLayout>
+            <ProgramsSection />
           </ContentLayout>
         </MainLayout>
       </main>
