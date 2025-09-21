@@ -36,7 +36,7 @@ export const AboutSection = () => {
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
               Tentang Kami
             </h1>
-            <p className="leading-7 text-justify md:max-w-2xl">
+            <p className="leading-7 text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
               adipisicing elit. Consectetur iure quis minima! Quasi officia
               fugit, libero eius corrupti nihil facilis dolores nobis expedita
