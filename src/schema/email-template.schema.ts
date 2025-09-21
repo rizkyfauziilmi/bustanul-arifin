@@ -1,3 +1,4 @@
+import { isValidPhoneNumber } from "react-phone-number-input";
 import { z } from "zod";
 
 export const emailTemplateSchema = z
@@ -15,7 +16,12 @@ export const emailTemplateSchema = z
       message: "Jenis kelamin harus dipilih",
     }),
     // TODO: validate phone number
-    nomorHandphone: z.string().min(1, "No. HP/WA harus diisi"),
+    nomorHandphone: z
+      .string()
+      .min(1, "No. HP/WA harus diisi")
+      .refine(isValidPhoneNumber, {
+        message: "Nomor handphone tidak valid",
+      }),
     asalSekolah: z.string().min(1, "Asal sekolah harus diisi"),
     program: z.enum(["Reguler", "Boarding School"], {
       message: "Program harus dipilih",

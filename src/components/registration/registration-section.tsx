@@ -161,13 +161,7 @@ export default function RegistrationSection() {
                   <h3 className="text-xl font-semibold text-card-foreground">
                     {method.title}
                   </h3>
-                  <Badge
-                    variant={method.id === "email" ? "default" : "outline"}
-                    className={cn(
-                      "mt-1",
-                      method.id === "email" && "bg-primary text-white",
-                    )}
-                  >
+                  <Badge variant="outline" className="mt-1">
                     Metode {index + 1}
                   </Badge>
                 </div>

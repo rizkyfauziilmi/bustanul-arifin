@@ -1,21 +1,19 @@
+import { CalendarIcon, Inbox, Send } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { format } from "date-fns";
+import { id as idLocale } from "date-fns/locale";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { CalendarIcon, Mail, Send } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { format } from "date-fns";
-import {
-  emailTemplateSchema,
-  type EmailTemplateSchema,
-} from "@/schema/email-template.schema";
-import type z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -25,21 +23,29 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { generateEmailTemplate } from "@/lib/string";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Calendar } from "../ui/calendar";
-import { id } from "date-fns/locale";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  emailTemplateSchema,
+  type EmailTemplateSchema,
+} from "@/schema/email-template.schema";
+import { generateEmailTemplate } from "@/lib/string";
+import { PhoneInput } from "../phone-input";
 
-// TODO: integrate dialog with react hook form
 export const EmailTemplateDialog = () => {
   const [open, setOpen] = useState(false);
 
@@ -49,7 +55,7 @@ export const EmailTemplateDialog = () => {
     );
   };
 
-  const form = useForm<z.infer<typeof emailTemplateSchema>>({
+  const form = useForm<EmailTemplateSchema>({
     resolver: zodResolver(emailTemplateSchema),
     defaultValues: {
       namaLengkap: "",
@@ -77,20 +83,20 @@ export const EmailTemplateDialog = () => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button className="w-full">
-          <Mail className="w-4 h-4 mr-2" />
+          <Inbox />
           Buka Template Email
         </Button>
       </DialogTrigger>
       <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Mendaftar Sebagai Calon Siswa Baru</DialogTitle>
-          <DialogDescription>
-            Isi form berikut untuk membuka template email pendaftaran. Tunggu
-            balasan email untuk informasi selanjutnya.
-          </DialogDescription>
-        </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <DialogHeader>
+              <DialogTitle>Edit profile</DialogTitle>
+              <DialogDescription>
+                Make changes to your profile here. Click save when you&apos;re
+                done.
+              </DialogDescription>
+            </DialogHeader>
             <div className="grid grid-cols-2 gap-4">
               <FormField
                 control={form.control}
@@ -208,7 +214,7 @@ export const EmailTemplateDialog = () => {
                           >
                             {field.value ? (
                               format(field.value, "PPP", {
-                                locale: id,
+                                locale: idLocale,
                               })
                             ) : (
                               <span>Pilih Tanggal Lahir</span>
@@ -261,7 +267,13 @@ export const EmailTemplateDialog = () => {
                   <FormItem>
                     <FormLabel>Nomor Handphone</FormLabel>
                     <FormControl>
-                      <Input placeholder="Rizky Fauzi Ilmi" {...field} />
+                      <PhoneInput
+                        placeholder="Masukkan Nomor Handphone"
+                        international={false}
+                        defaultCountry="ID"
+                        allowedCountries={["ID"]}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -297,17 +309,33 @@ export const EmailTemplateDialog = () => {
                 )}
               />
             </div>
-            <Button
-              type="button"
-              className="w-full"
-              onClick={async () => {
-                await form.trigger(); // Manually triggers form or input validation
-                if (form.formState.isValid) onSubmit(form.getValues()); // Call the `onSubmit` function if the form is validated
-              }}
-            >
-              <Send />
-              Kirim Email
-            </Button>
+            <FormField
+              control={form.control}
+              name="alamatLengkap"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Alamat Lengkap</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Jl. Contoh No. 123, Kecamatan, Kota"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button type="button" variant="outline" className="flex-1">
+                  Tutup
+                </Button>
+              </DialogClose>
+              <Button type="submit" className="flex-1">
+                <Send className="mr-2 h-4 w-4" />
+                Kirim Email
+              </Button>
+            </DialogFooter>
           </form>
         </Form>
       </DialogContent>
