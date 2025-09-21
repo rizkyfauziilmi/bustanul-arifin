@@ -9,19 +9,24 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/components/theme-provider";
 
-export function ModeToggle() {
-  const { setTheme } = useTheme();
+export function ModeToggle({ fullWidth = false }: { fullWidth?: boolean }) {
+  const { setTheme, theme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+        <Button
+          variant="outline"
+          size={fullWidth ? "default" : "icon"}
+          className={fullWidth ? "w-full" : undefined}
+        >
+          {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          {fullWidth && <span className="ml-2">Ubah Tema</span>}
           <span className="sr-only">Ubah Tema</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align={fullWidth ? "center" : "end"}>
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Terang
         </DropdownMenuItem>

@@ -103,7 +103,7 @@ export const TuitionSection = () => {
             quaerat exercitationem consectetur rem sed.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
           {tuitions.map((tuition) => {
             const allSameKey = isAllSameKey(tuition.prices);
             return (

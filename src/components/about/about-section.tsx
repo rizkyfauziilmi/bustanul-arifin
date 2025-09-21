@@ -26,21 +26,17 @@ export const AboutSection = () => {
   return (
     <section id="about">
       <div className="space-y-12">
-        <div className="flex items-center gap-8">
+        <div className="flex flex-col md:flex-row md:items-center gap-8">
           <img
             src="/hero-image.jpg"
             alt="About Image"
-            className="aspect-square w-80 ml-3 rounded-lg"
-            style={{
-              transform: "perspective(400px) rotateY(10deg)",
-              transition: "transform 0.5s",
-            }}
+            className="md:aspect-square aspect-video w-full md:w-80 md:ml-3 rounded-lg transition-transform duration-500 md:[transform:perspective(400px)_rotateY(10deg)]"
           />
           <div className="space-y-4">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
               Tentang Kami
             </h1>
-            <p className="leading-7 max-w-2xl">
+            <p className="leading-7 text-justify md:max-w-2xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
               adipisicing elit. Consectetur iure quis minima! Quasi officia
               fugit, libero eius corrupti nihil facilis dolores nobis expedita
@@ -49,7 +45,7 @@ export const AboutSection = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
           {quickInfo.map((info) => (
             <div key={info.label} className="bg-muted p-4 rounded-md space-y-2">
               <div className="flex items-center gap-4">
