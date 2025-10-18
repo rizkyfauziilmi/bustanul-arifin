@@ -5,7 +5,7 @@ export const emailTemplateSchema = z
   .object({
     namaLengkap: z.string().min(1, "Nama lengkap harus diisi"),
     tempatLahir: z.string().min(1, "Tempat lahir harus diisi"),
-    jenjangSekolah: z.enum(["SMP", "SMK"], {
+    jenjangSekolah: z.enum(["SD", "SMP", "SMK"], {
       message: "Jenjang sekolah harus dipilih",
     }),
     tanggalLahir: z.date({
@@ -32,7 +32,11 @@ export const emailTemplateSchema = z
       const now = new Date();
       const currentYear = now.getFullYear();
       let minYear, maxYear;
-      if (data.jenjangSekolah === "SMP") {
+      if (data.jenjangSekolah === "SD") {
+        // SD: usia 6-12 tahun
+        minYear = currentYear - 12;
+        maxYear = currentYear - 6;
+      } else if (data.jenjangSekolah === "SMP") {
         // SMP: usia 12-15 tahun
         minYear = currentYear - 15;
         maxYear = currentYear - 12;

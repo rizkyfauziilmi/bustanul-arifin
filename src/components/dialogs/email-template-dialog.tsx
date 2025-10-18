@@ -91,10 +91,10 @@ export const EmailTemplateDialog = () => {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <DialogHeader>
-              <DialogTitle>Edit profile</DialogTitle>
+              <DialogTitle>Data Calon Siswa Baru</DialogTitle>
               <DialogDescription>
-                Make changes to your profile here. Click save when you&apos;re
-                done.
+                Isi form berikut untuk mengirim email pendaftaran calon siswa
+                baru.
               </DialogDescription>
             </DialogHeader>
             <div className="grid grid-cols-2 gap-4">
@@ -226,29 +226,42 @@ export const EmailTemplateDialog = () => {
                       <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
                           mode="single"
+                          defaultMonth={(() => {
+                            const jenjang = form.watch("jenjangSekolah");
+                            const now = new Date();
+                            const currentYear = now.getFullYear();
+                            if (jenjang === "SD") {
+                              // SD: usia 6-12 tahun, default to 9 years ago
+                              return new Date(currentYear - 9, 0);
+                            } else if (jenjang === "SMP") {
+                              // SMP: usia 12-15 tahun, default to 13 years ago
+                              return new Date(currentYear - 13, 0);
+                            } else if (jenjang === "SMK") {
+                              // SMK: usia 15-18 tahun, default to 16 years ago
+                              return new Date(currentYear - 16, 0);
+                            }
+                            // fallback default
+                            return new Date(2006, 0);
+                          })()}
                           selected={field.value}
                           onSelect={field.onChange}
                           disabled={(date) => {
                             const jenjang = form.watch("jenjangSekolah");
-
                             const now = new Date();
                             const currentYear = now.getFullYear();
-
                             let minYear, maxYear;
-
-                            if (jenjang === "SMP") {
-                              // SMP: usia 12-15 tahun
+                            if (jenjang === "SD") {
+                              minYear = currentYear - 12;
+                              maxYear = currentYear - 6;
+                            } else if (jenjang === "SMP") {
                               minYear = currentYear - 15;
                               maxYear = currentYear - 12;
                             } else if (jenjang === "SMK") {
-                              // SMK: usia 15-18 tahun
                               minYear = currentYear - 18;
                               maxYear = currentYear - 15;
                             } else {
-                              // fallback, should not happen
                               return false;
                             }
-
                             const birthYear = date.getFullYear();
                             return birthYear < minYear || birthYear > maxYear;
                           }}
