@@ -98,9 +98,9 @@ export const TuitionSection = () => {
             Biaya Pendidikan
           </h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi
-            obcaecati earum facere. Ipsum temporibus repudiandae quos veniam,
-            quaerat exercitationem consectetur rem sed.
+            Berikut rincian biaya pendidikan di Pondok Pesantren Bustanul
+            Arifin. Biaya SMP dan SMK GRATIS, termasuk SPP, uang gedung,
+            seragam, dan makan santri.
           </p>
         </div>
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4">

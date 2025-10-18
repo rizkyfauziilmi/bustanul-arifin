@@ -27,7 +27,7 @@ const facilities: Facility[] = [
     id: "asrama",
     name: "Asrama",
     description:
-      "Fasilitas hunian yang nyaman dan aman untuk para santri dengan pengawasan 24 jam dan lingkungan Islami yang mendukung pembelajaran.",
+      "Tempat tinggal santri dengan pengawasan dan lingkungan Islami.",
     category: "living",
     icon: <Home className="w-6 h-6" />,
     image: "/modern-islamic-dormitory-building-with-students.jpg",
@@ -36,7 +36,7 @@ const facilities: Facility[] = [
     id: "lahan-praktek",
     name: "Lahan Praktek Pertanian",
     description:
-      "Area praktik pengolahan hasil pertanian yang dilengkapi dengan peralatan modern untuk pembelajaran agribisnis dan teknologi pertanian.",
+      "Area untuk praktik pengolahan hasil pertanian dan belajar agribisnis.",
     category: "learning",
     icon: <Building className="w-6 h-6" />,
     image: "/agricultural-practice-field-with-greenhouse-and-fa.jpg",
@@ -45,7 +45,7 @@ const facilities: Facility[] = [
     id: "workshop",
     name: "Gedung Workshop",
     description:
-      "Balai latihan kerja yang dilengkapi dengan peralatan teknologi terkini untuk praktik programming, robotika, dan keterampilan IT lainnya.",
+      "Tempat latihan kerja untuk praktik programming, robotika, dan IT.",
     category: "learning",
     icon: <Wrench className="w-6 h-6" />,
     image: "/modern-it-workshop-with-computers-and-technology-e.jpg",
@@ -54,7 +54,7 @@ const facilities: Facility[] = [
     id: "kolam-renang",
     name: "Kolam Renang",
     description:
-      "Fasilitas olahraga air yang bersih dan terawat untuk mendukung kesehatan jasmani dan kegiatan ekstrakurikuler renang.",
+      "Fasilitas olahraga air untuk kegiatan renang dan kesehatan jasmani.",
     category: "recreation",
     icon: <Waves className="w-6 h-6" />,
     image: "/clean-swimming-pool-at-islamic-school-with-modern-.jpg",
@@ -62,8 +62,7 @@ const facilities: Facility[] = [
   {
     id: "masjid",
     name: "Masjid",
-    description:
-      "Tempat ibadah yang megah dan nyaman untuk shalat berjamaah, kajian keislaman, dan kegiatan spiritual lainnya.",
+    description: "Tempat ibadah untuk shalat berjamaah dan kegiatan keislaman.",
     category: "spiritual",
     icon: <Mosque className="w-6 h-6" />,
     image: "/beautiful-modern-mosque-with-islamic-architecture-.jpg",
@@ -72,7 +71,7 @@ const facilities: Facility[] = [
     id: "lapangan-futsal",
     name: "Lapangan Futsal",
     description:
-      "Lapangan futsal berkualitas tinggi dengan rumput sintetis untuk mendukung kegiatan olahraga dan turnamen antar kelas.",
+      "Lapangan futsal dengan rumput sintetis untuk olahraga dan turnamen.",
     category: "recreation",
     icon: <Trophy className="w-6 h-6" />,
     image: "/modern-futsal-court-with-synthetic-grass-and-goal-.jpg",

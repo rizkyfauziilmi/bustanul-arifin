@@ -3,20 +3,22 @@ import { CalendarClock, Target, Telescope } from "lucide-react";
 const quickInfo = [
   {
     label: "Sejarah",
-    text: "Didirikan pada tahun 1990, Bustanul Arifin telah berkembang dari sebuah madrasah kecil menjadi salah satu lembaga pendidikan Islam terkemuka di wilayah ini. Dengan komitmen terhadap kualitas pendidikan dan nilai-nilai keislaman, sekolah ini telah mencetak ribuan lulusan yang sukses di berbagai bidang.",
+    text: "Pondok Pesantren Tahfidz Yatim Bustanul Arifin berdiri pada tahun 2015 di Sindangkerta, Bandung Barat, atas prakarsa Drs. Dodi Suwandi. Didirikan untuk memberikan pendidikan Islam dan tahfidz Al-Qur’an bagi anak yatim dan dhuafa, pesantren ini tumbuh menjadi lembaga yang menanamkan nilai ikhlas, mandiri, dan berakhlakul karimah, di bawah naungan Nahdlatul Ulama (NU).",
     icon: CalendarClock,
   },
   {
     label: "Visi",
-    text: "Menjadi lembaga pendidikan Islam terkemuka yang mengintegrasikan ilmu pengetahuan dan nilai-nilai keislaman untuk mencetak generasi unggul.",
+    text: "Mencetak generasi Qur’ani yang muttafaqoh fiddin, berjiwa ikhlas, sederhana, mandiri, berukhuwah Islamiyah, dan berperilaku atas dasar Al-Qur’an serta Sunnah Rasulullah SAW.",
     icon: Telescope,
   },
   {
     label: "Misi",
     lists: [
-      "Menyediakan pendidikan berkualitas yang berlandaskan nilai-nilai Islam.",
-      "Mendorong pengembangan karakter dan akhlak mulia pada setiap siswa.",
-      "Mengintegrasikan teknologi dalam proses pembelajaran untuk meningkatkan efektivitas dan efisiensi.",
+      "Menyelenggarakan pendidikan tahfidz Al-Qur’an 30 juz yang berkualitas.",
+      "Membentuk santri yang berakhlakul karimah, berilmu, dan bertanggung jawab.",
+      "Membina kemandirian dan semangat ukhuwah Islamiyah dalam kehidupan sehari-hari.",
+      "Menanamkan nilai ikhlas, sederhana, dan peduli sesama dalam diri setiap santri.",
+      "Memberikan pendidikan dan kebutuhan hidup gratis bagi anak yatim dan dhuafa.",
     ],
     icon: Target,
   },
@@ -37,17 +39,22 @@ export const AboutSection = () => {
               Tentang Kami
             </h1>
             <p className="leading-7 text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-              adipisicing elit. Consectetur iure quis minima! Quasi officia
-              fugit, libero eius corrupti nihil facilis dolores nobis expedita
-              sequi, maxime unde quas cupiditate a hic est quibusdam magni!
-              Similique obcaecati molestiae ut, aspernatur, quos at nam.
+              Pondok Pesantren Tahfidz Yatim Bustanul Arifin berdiri sejak 2015
+              di Sindangkerta, Bandung Barat, di bawah naungan Nahdlatul Ulama
+              (NU). Kami berkomitmen mencetak generasi Qur’ani yang berakhlakul
+              karimah, mandiri, dan berilmu melalui pendidikan tahfidz Al-Qur’an
+              30 juz. Seluruh santri merupakan anak yatim dan dhuafa yang
+              mendapatkan pendidikan, asrama, dan kebutuhan hidup secara gratis
+              sebagai wujud kepedulian dan pengabdian kami kepada umat.
             </p>
           </div>
         </div>
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
           {quickInfo.map((info) => (
-            <div key={info.label} className="bg-muted p-4 rounded-md space-y-2">
+            <div
+              key={info.label}
+              className="bg-muted p-4 rounded-md space-y-2 text-justify"
+            >
               <div className="flex items-center gap-4">
                 <div className="bg-primary p-2 rounded-md text-white">
                   <info.icon />
