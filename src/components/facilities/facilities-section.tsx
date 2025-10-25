@@ -5,12 +5,12 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Building,
+  // Building,
   Home,
   Wrench,
-  Waves,
+  // Waves,
   MSquare as Mosque,
-  Trophy,
+  // Trophy,
 } from "lucide-react";
 
 interface Facility {
@@ -30,17 +30,17 @@ const facilities: Facility[] = [
       "Tempat tinggal santri dengan pengawasan dan lingkungan Islami.",
     category: "living",
     icon: <Home className="w-6 h-6" />,
-    image: "/modern-islamic-dormitory-building-with-students.jpg",
+    image: "/asrama.png",
   },
-  {
-    id: "lahan-praktek",
-    name: "Lahan Praktek Pertanian",
-    description:
-      "Area untuk praktik pengolahan hasil pertanian dan belajar agribisnis.",
-    category: "learning",
-    icon: <Building className="w-6 h-6" />,
-    image: "/agricultural-practice-field-with-greenhouse-and-fa.jpg",
-  },
+  // {
+  //   id: "lahan-praktek",
+  //   name: "Lahan Praktek Pertanian",
+  //   description:
+  //     "Area untuk praktik pengolahan hasil pertanian dan belajar agribisnis.",
+  //   category: "learning",
+  //   icon: <Building className="w-6 h-6" />,
+  //   image: "/agricultural-practice-field-with-greenhouse-and-fa.png",
+  // },
   {
     id: "workshop",
     name: "Gedung Workshop",
@@ -48,34 +48,34 @@ const facilities: Facility[] = [
       "Tempat latihan kerja untuk praktik programming, robotika, dan IT.",
     category: "learning",
     icon: <Wrench className="w-6 h-6" />,
-    image: "/modern-it-workshop-with-computers-and-technology-e.jpg",
+    image: "/workshop.png",
   },
-  {
-    id: "kolam-renang",
-    name: "Kolam Renang",
-    description:
-      "Fasilitas olahraga air untuk kegiatan renang dan kesehatan jasmani.",
-    category: "recreation",
-    icon: <Waves className="w-6 h-6" />,
-    image: "/clean-swimming-pool-at-islamic-school-with-modern-.jpg",
-  },
+  // {
+  //   id: "kolam-renang",
+  //   name: "Kolam Renang",
+  //   description:
+  //     "Fasilitas olahraga air untuk kegiatan renang dan kesehatan jasmani.",
+  //   category: "recreation",
+  //   icon: <Waves className="w-6 h-6" />,
+  //   image: "/clean-swimming-pool-at-islamic-school-with-modern-.png",
+  // },
   {
     id: "masjid",
     name: "Masjid",
     description: "Tempat ibadah untuk shalat berjamaah dan kegiatan keislaman.",
     category: "spiritual",
     icon: <Mosque className="w-6 h-6" />,
-    image: "/beautiful-modern-mosque-with-islamic-architecture-.jpg",
+    image: "/masjid.png",
   },
-  {
-    id: "lapangan-futsal",
-    name: "Lapangan Futsal",
-    description:
-      "Lapangan futsal dengan rumput sintetis untuk olahraga dan turnamen.",
-    category: "recreation",
-    icon: <Trophy className="w-6 h-6" />,
-    image: "/modern-futsal-court-with-synthetic-grass-and-goal-.jpg",
-  },
+  // {
+  //   id: "lapangan-futsal",
+  //   name: "Lapangan Futsal",
+  //   description:
+  //     "Lapangan futsal dengan rumput sintetis untuk olahraga dan turnamen.",
+  //   category: "recreation",
+  //   icon: <Trophy className="w-6 h-6" />,
+  //   image: "/modern-futsal-court-with-synthetic-grass-and-goal-.png",
+  // },
 ];
 
 const categories = [

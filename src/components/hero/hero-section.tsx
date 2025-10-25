@@ -4,7 +4,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative h-[calc(100vh-64px)] bg-[url('/hero-image.jpg')] bg-cover bg-center"
+      className="relative h-[calc(100vh-64px)] bg-[url('/banner.png')] bg-cover bg-center"
     >
       <DarkOverlay
         className="hidden md:block"

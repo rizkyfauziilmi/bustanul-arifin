@@ -30,9 +30,9 @@ export const AboutSection = () => {
       <div className="space-y-12">
         <div className="flex flex-col md:flex-row md:items-center gap-8">
           <img
-            src="/hero-image.jpg"
+            src="/banner.png"
             alt="About Image"
-            className="md:aspect-square aspect-video w-full md:w-80 md:ml-3 rounded-lg transition-transform duration-500 md:[transform:perspective(400px)_rotateY(10deg)]"
+            className="md:aspect-square aspect-video w-full md:w-80 md:ml-3 rounded-lg transition-transform duration-500 md:[transform:perspective(400px)_rotateY(10deg)] bg-cover object-cover"
           />
           <div className="space-y-4">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">

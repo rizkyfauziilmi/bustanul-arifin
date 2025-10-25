@@ -73,8 +73,8 @@ export const EmailTemplateDialog = () => {
   function onSubmit(values: EmailTemplateSchema) {
     const { subject, body } = generateEmailTemplate(values);
 
-    form.reset();
-    setOpen(false);
+    // form.reset();
+    // setOpen(false);
 
     sendEmail(subject, body, "rizkyfauziilmi@gmail.com");
   }
