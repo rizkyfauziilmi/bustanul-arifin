@@ -1,7 +1,7 @@
 export const scrollToSection = (id: string) => {
-  if (id === "home") {
+  if (id === 'home') {
     // scroll to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     return;
   }
 
@@ -10,6 +10,6 @@ export const scrollToSection = (id: string) => {
     const yOffset = -80; // 80px offset for navbar
     const y =
       element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
+    window.scrollTo({ top: y, behavior: 'smooth' });
   }
 };

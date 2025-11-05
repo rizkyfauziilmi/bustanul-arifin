@@ -1,4 +1,4 @@
-import type { EmailTemplateSchema } from "@/schema/email-template.schema";
+import type { EmailTemplateSchema } from '@/schema/email-template.schema';
 
 export function generateEmailTemplate(data: EmailTemplateSchema) {
   const {
@@ -26,7 +26,7 @@ Saya bermaksud mendaftarkan diri sebagai calon siswa ${jenjangSekolah} di Ponpes
 
 Data Calon Siswa:
 - Nama Lengkap: ${namaLengkap}
-- Tempat, Tanggal Lahir: ${tempatLahir}, ${tanggalLahir.toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" })}
+- Tempat, Tanggal Lahir: ${tempatLahir}, ${tanggalLahir.toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' })}
 - Jenis Kelamin: ${jenisKelamin}
 - Alamat Lengkap: ${alamatLengkap}
 - No. HP/WA: ${handphone}
